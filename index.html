@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi, minimal-ui' />
+    <title>Md Arshad</title>
+    <meta property="og:title" content="Md Arshad"/>
+    <meta name="description" content="Md Arshad 3D Portfolio"/>
+    <meta property="og:description" content="Md Arshad 3D Portfolio"/>
+    <meta property="og:url" content="https://mdarshad.vercel.app"/>
+    <meta name="twitter:card" content="summary"/>
+  </head>
+  <body class="light-theme">
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" asscroll-container>
+
+      <div class="toggle-bar">
+        <div class="sun-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z"/></svg>
+        </div>
+        <button class="toggle-button">
+          <div class="toggle-circle"></div>
+        </button>
+        <div class="moon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z"/></svg>
+        </div>
+      </div>
+      
+      <div class="page-wrapper" asscroll>
+        <section class="hero">
+          <div class="hero-wrapper">
+
+            <!-- Intro Stuff -->
+            <div class="intro-text">Welcome to my portfolio!</div>
+            <div class="arrow-svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"/></svg>
+            </div>
+
+            <div class="hero-main">
+              <h1 class="hero-main-title">Md Arshad</h1>
+              <p class="hero-main-description">Data Scientist | Web Developer</p>
+            </div>
+
+            <div class="hero-second">
+              <p class="hero-second-subheading first-sub">Md Arshad</p>
+              <p class="hero-second-subheading second-sub">Portfolio</p>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="first-move section-margin"></div>
+
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">About Me</span>
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+            <span class="section-number">01</span>
+          </div>
+          
+
+          <div class="section-detail-wrapper">
+            <!-- <h3 class="section-heading">Hello!</h3> -->
+            <p class="section-text">
+    My name is Mohamed Arshad and I am a Data Scientist with a strong interest in building intelligent, data-driven solutions. Alongside my core work in data analytics and machine learning, I also work as a part-time Web Developer, creating modern and responsive web applications.
+</p>
+
+<p class="section-text">
+    I have a solid foundation in Python, data cleaning, machine learning models, exploratory data analysis, and visualization. On the development side, I specialize in React, Node.js, and Tailwind CSS, focusing on clean UI, smooth interactions, and highly optimized user experiences.
+</p>
+
+<p class="section-text">
+    I’m always looking for opportunities to work on real-world data problems, collaborate on impactful web projects, and contribute to tech-driven solutions. My ability to learn quickly, adapt to challenges, and craft scalable solutions makes me confident in taking on both data science and full-stack development roles.
+</p>
+
+<p class="section-text">
+    I enjoy exploring new tools, building innovative projects, and constantly improving my technical skillset to stay ahead in both data and web technologies. ✨
+</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 id="education">EDUCATION</h1>
+            <br>
+            <br>
+            <br>
+            <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWp2Z1MnCkwEpy_v7I-L1MGm-s9XzCAw1V_A&s" alt="Government College of Engineering and Leather Technology Graphic"></p>
+            <br>
+            <br>
+            <h3 id="-government-college-of-engineering-and-leather-technology-https-www-linkedin-com-school-gcelt-trk-public_profile_school-"><a href="https://www.linkedin.com/school/panimalar-engineering-college/posts/?feedView=all">Panimalar Engineering College </a></h3>
+            <br>
+            <br>
+            <h4 id="bachelor-of-technology-in-leather-technology">Bachelor of Technology In Artificial Intelligence & Data science</h4>
+            <br>
+            <br>
+            <p>CGPA - 7.6</p>
+            <br>
+            <p>[ 2023  -  2027 ]</p>
+          </div>
+        </section>
+
+        <div class="second-move section-margin"></div>
+
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper blue-text blue-border">
+            <h1 class="section-title blue-text blue-border">
+              <span class="section-title-text blue-text">My Projects</span>
+              <div class="section-title-decoration styleOne blue-border"></div>
+              <div class="section-title-decoration styleTwo blue-border"></div>
+              <div class="section-title-decoration styleThree blue-background blue-border"></div>
+            </h1>
+            <span class="section-number blue-text">02</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">SOCIAL MEDIA SENTIMENT ANALYZER</h3>
+
+<p class="section-text">
+    This project focuses on analyzing real-time social media content and determining whether 
+    the posts are positive, negative, or harmful. Developed originally for a Smart India 
+    Hackathon problem statement, the system evaluates Twitter/X feeds to identify potential 
+    unsafe or negative interactions using sentiment analysis and OCR-based text extraction.
+</p>
+
+<p class="section-text">
+    The pipeline automatically extracts all visible text from a live Twitter/X profile using 
+    Selenium, then processes images using Tesseract OCR to capture text from memes, screenshots, 
+    and graphic posts. All the collected content is combined and analyzed using NLTK’s VADER 
+    sentiment analyzer to classify the page as safe or unsafe. If harmful sentiment is detected, 
+    the system automatically captures a screenshot for review or reporting.
+</p>
+<br>
+<p><picture> <img src="https://github.com/MdAmiruddin/MdAmiruddin.github.io/raw/main/images/blog.gif" width="500"></picture></p>
+<br>
+
+<p>
+    <a href="https://github.com/Arshxd18/pursing-of-social-media" title="Social Media Sentiment Analyzer">
+        See Project
+        <img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link">
+    </a>
+</p>
+
+            
+            <h3 class="section-heading">Website Vulnerability Analyzer</h3>
+            <p class="section-text">This project is a web vulnerability analyzer written in Python. It aims to scan websites for potential security flaws and report them to the user. The program will first assess the target site for missing patches and outdated software, and then proceed to analyze any links associated with the page for malicious content.</p>
+            <p class="section-text"> Once this task is complete, the program will then alert the user of any discovered vulnerabilities in a detailed report. The report will provide information on the discovered vulnerabilities, and suggest remedies to address the issue. Additionally, the program will allow users to set specific parameters and customize their security scans.</p>
+            <br>
+            <p> <a href="https://github.com/MdAmiruddin/Website-Vulnerability-Analyzer">See Project<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+
+            <h3 class="section-heading">WhatsApp Automation bot</h3>
+            <p class="section-text">This project is about the development of an automated chatbot for Whatsapp that can be used to manage appointments and orders for any store or service. The chatbot will be able to handle incoming messages, notify customers about availability, confirm and schedule appointments, take orders, process and keep track of issues.</p>
+            <p class="section-text">This powerful tool improves productivity and communication with customers and frees up business owners’ time to focus on other areas. The bot will be integrated with WhatsApp, allowing businesses to easily reach their customers and provide a superior customer experience. You can also add custom features to the bot for unique business needs.</p>
+            <br>
+            <video controls width="500">
+              <source src="https://user-images.githubusercontent.com/86834649/233000022-1cfbabd8-15f5-449b-b409-b5ab44849cc9.mp4" type="video/webm">
+          </video>
+            <br>
+            <br>
+            <p><a href="https://github.com/MdAmiruddin/whatsapp-automation" title="WhatsApp Automation bot">See Project<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <h3 class="section-heading">CTF - Valentine Special Challenge</h3>
+            <p class="section-text">In this project, I create a Capture The Flag (CTF) challenge based on cryptography and hash cracking.</p>
+            <p class="section-text">I implemented a multitude of cryptography algorithms such as AES256-CBC, BASE-256, which had to be cracked or decrypted in order to reveal the flag. The challenge required the user to gain enough background knowledge on cryptography and hash cracking principles in order to solve the Flag.</p>
+            <br>
+            <picture> <img src="https://raw.githubusercontent.com/MdAmiruddin/valentine-special-tryhackme/main/Assets/vsc.png" width="500"></picture>
+            <br>
+            <br>
+            <p><a href="https://tryhackme.com/jr/valentinespecialchallenge" title="CTF ROOM">See Project<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <h3 class="section-heading">CTF Machine - Crypton</h3>
+            <p class="section-text">In this project, I created a Capture the Flag (CTF) challenge based on cryptography. The challenge involved a series of cryptography-related puzzles that had to be solved by players. The puzzles were designed to test the players’ understanding of core cryptographic concepts, such as hashing, symmetric and asymmetric encryption, digital signatures, and more.</p>
+            <p class="section-text">Additionally, the puzzles featured a variety of hash-cracking activities, including brute-force and dictionary attacks. The challenge was designed to increase players' familiarity with the fundamentals of cryptography. The puzzle-solving challenges were designed to be both fun and educational, so that players can learn cryptography by putting their skills to the test in a simulated CTF setting.</p>
+            <br>
+            <picture> <img src="https://raw.githubusercontent.com/MdAmiruddin/valentine-special-tryhackme/main/Assets/crypton.png" width="500"></picture>
+            <br>
+            <br>
+            <p><a href="https://tryhackme.com/jr/crypton" title="CTF ROOM">See Project<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+          </div>
+        </section>
+        
+        <div class="third-move section-margin"></div>
+
+        <section class="third-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar green-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper green-text green-border">
+            <h1 class="section-title green-text green-border">
+              <span class="section-title-text green-text">Work Experience</span>
+              <div class="section-title-decoration styleOne green-border"></div>
+              <div class="section-title-decoration styleTwo green-border"></div>
+              <div class="section-title-decoration styleThree green-background green-border"></div>
+            </h1>
+            <span class="section-number green-text">03</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <p><img src="data:image/jpeg;base64,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" alt="Cyber Intelligence Solutions Graphic"></p>
+            <br>
+            <br>
+            <h4 id="-cyber-intelligence-solutions-https-www-linkedin-com-company-official-cis-trk-public_profile_experience-item_profile-section-card_subtitle-click-"><a href="https://essentia.dev/">Essentia.dev</a></h4>
+            <br>
+            <p><strong>Data Science Intern</strong> [ Jun 2024  -  July 2024 ]</p>
+            
+            <br>
+            <p>• Worked in an real time bharath OCR project<br>• Image to Text Extraction</p>
+            <br>
+            <br>
+            
+            <br>
+            <br>
+            <br>
+            <h2 id="recommendation-letter">Letter Head</h2>
+            <br>
+            <br>
+            <p><img src="https://res.cloudinary.com/dihxc3yzi/image/upload/v1764351195/1720543265343_a5fzkz.jpg" width="500" alt=""></p>
+
+          </div>
+        </section>
+
+
+        <div class="second-move section-margin"></div>
+
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper blue-text blue-border">
+            <h1 class="section-title blue-text blue-border">
+              <span class="section-title-text blue-text">CONTACT</span>
+              <div class="section-title-decoration styleOne blue-border"></div>
+              <div class="section-title-decoration styleTwo blue-border"></div>
+              <div class="section-title-decoration styleThree blue-background blue-border"></div>
+            </h1>
+            <span class="section-number blue-text">04</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Linkedin</h3>
+            <p class="section-text">If you'd like to get in touch, please feel free to connect with me on LinkedIn. On LinkedIn, I am active in discussions about network security, data privacy, and vulnerability management. I am available for interviews and I look forward to connecting with other professionals in the cybersecurity field.</p>
+            <br>
+            <p><a href="https://www.linkedin.com/in/mohamed-arshad-82b742281/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a> </p>
+            <h3 class="section-heading">Github</h3>
+            <p class="section-text">I am an aspiring Data science and avid tech enthusiast. I can be found on Github, where I participate in the open source community. I am always searching for different ways to learn and share knowledge pertaining to cyber security. I stay up to date with the newest technology, vulnerabilities, trends, and cyber security advancements. If you are looking to collaborate with someone who has a passion for learning and innovation, then you've come to the right place!</p>
+            <br>
+            <p><a href="https://github.com/Arshxd18"><img src="https://img.shields.io/badge/Github-12100E?logo=github&amp;logoColor=white" alt="Medium"></a> </p>
+            
+           
+            <br>
+          </div>
+        </section>
+        <footer class="footer">
+          <span class="footer__copyright">Copyright &copy; 2025 - Md Arshad</span>
+        </footer><br><br>
+
+
+
+  
+
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
